@@ -1,0 +1,7 @@
+{
+    "user": {
+        "key": "cookie key goes here",
+        "room": "ideally a private or unused room's name (the url name, not the title) goes here",
+        "updatecode": "Plug's update code. This is not a resource I will share."
+    }
+}

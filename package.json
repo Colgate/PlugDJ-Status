@@ -1,0 +1,11 @@
+{
+  "name": "PlugDJStatusCheck",
+  "version": "2.0.0",
+  "author": {
+    "name": "Jeremy Colgate",
+    "email": "colgate@colgateminuette.org"
+  },
+  "dependencies": {
+    "plugapi": "*"
+  }
+}
