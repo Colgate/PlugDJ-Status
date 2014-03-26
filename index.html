@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Plug.DJ Status</title>
+    <script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+    <script type="text/javascript" src="http://cdn.sockjs.org/sockjs-0.3.min.js"></script>
+    <script type="text/javascript">
+        var socket = new SockJS('http://s1.colgateminuette.org:2324/gateway');
+            socket.onmessage = function(msg) {
+                var data = JSON.parse(msg.data);
+                if (data.type === 'status') {
+                    var data = data.data
+                    $('#testdiv').append(
+                        '<center><h3> Website Status : ' + data.status + ' ' + (data.status == 200 ? 'OK!':'Error') + '</h3><h3> Can connect to room? : ' + data.canConnect + '</h3>');
+                }
+            }
+    </script>
+    <style type="text/css">
+        body {
+            background: #333;
+            font-family: Helvetica,Arial,sans-serif;
+            font-size: 12px;
+            color: #fff;
+        }
+    </style>
+</head>
+<body>
+    <center>
+        <h1>Plug.DJ Status</h1>
+        <div id='testdiv'></div>
+        <p><font size="0">plug.dj status check created by <a href='http://github.com/colgate'>Colgate.</a></font></p>
+</body>
+</html>
